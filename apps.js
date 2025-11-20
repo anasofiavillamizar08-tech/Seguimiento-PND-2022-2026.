@@ -1,33 +1,30 @@
-// ================= CONFIGURACIÓN GLOBAL CHART.JS =================
-const IS_LOCAL = (location.hostname === "127.0.0.1" || 
-                  location.hostname === "localhost" ||
-                  location.hostname === "");
-
+/* ================= CONFIG GLOBAL CHART.JS ================= */
 if (typeof Chart !== "undefined") {
+  // Tipografía general
   Chart.defaults.font.family =
     'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   Chart.defaults.font.size = 11;
+
+  // Sin animaciones pesadas → página más fluida
   Chart.defaults.animation = false;
   Chart.defaults.responsiveAnimationDuration = 0;
 }
 
-// ================= TABS =================
-function setupTabs() {
-  const tabs = document.querySelectorAll(".tab-btn");
-  const panels = document.querySelectorAll(".panel");
+/* ================= TABS ================= */
+const tabs = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".panel");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      panels.forEach((p) => p.classList.remove("active"));
-      tab.classList.add("active");
-      const target = document.getElementById(tab.dataset.target);
-      if (target) target.classList.add("active");
-    });
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.classList.remove("active"));
+    panels.forEach((p) => p.classList.remove("active"));
+    tab.classList.add("active");
+    const target = document.getElementById(tab.dataset.target);
+    if (target) target.classList.add("active");
   });
-}
+});
 
-// ================= DATA =================
+/* ================= DATA ================= */
 const dataPND = {
   general: {
     avance: 59.18,
@@ -50,10 +47,7 @@ const dataPND = {
         titulo: "Tránsito inmediato a educación superior (zonas rurales)",
         valor: 104.31,
       },
-      {
-        titulo: "Estudiantes nuevos en Educación Superior",
-        valor: 38.1,
-      },
+      { titulo: "Estudiantes nuevos en Educación Superior", valor: 38.1 },
       {
         titulo:
           "Niñas y niños con educación inicial en el marco de la atención integral",
@@ -64,17 +58,13 @@ const dataPND = {
           "Ambientes educativos construidos/mejorados en educación preescolar, básica y media",
         valor: 44.72,
       },
-      {
-        titulo: "Participación de la inversión en I+D frente al PIB",
-        valor: 62.0,
-      },
+      { titulo: "Participación de la inversión en I+D frente al PIB", valor: 62.0 },
       {
         titulo: "Cobertura del programa de alimentación escolar (PAE)",
         valor: 84.48,
       },
       {
-        titulo:
-          "Espacios culturales construidos, dotados y fortalecidos",
+        titulo: "Espacios culturales construidos, dotados y fortalecidos",
         valor: 55.5,
       },
       {
@@ -82,10 +72,7 @@ const dataPND = {
           "Instituciones educativas/culturales con proyectos institucionales",
         valor: 594.6,
       },
-      {
-        titulo: "Establecimientos que incorporan educación CRESE",
-        valor: 82.22,
-      },
+      { titulo: "Establecimientos que incorporan educación CRESE", valor: 82.22 },
       {
         titulo:
           "Personas que acceden a procesos de fortalecimiento de prácticas culturales y artísticas",
@@ -96,27 +83,16 @@ const dataPND = {
           "Estudiantes de transición a sexto en programas de desarrollo integral",
         valor: 44.15,
       },
-      {
-        titulo:
-          "Tasa de deserción interanual del sector oficial",
-        valor: 41.34,
-      },
-      {
-        titulo: "Tasa de cobertura neta en educación media",
-        valor: 77.72,
-      },
+      { titulo: "Tasa de deserción interanual del sector oficial", valor: 41.34 },
+      { titulo: "Tasa de cobertura neta en educación media", valor: 77.72 },
       {
         titulo:
           "Proyectos artísticos y culturales apoyados por Concertación Cultural",
         valor: 96.0,
       },
+      { titulo: "Población campesina que no sabe leer y escribir", valor: 0.0 },
       {
-        titulo: "Población campesina que no sabe leer y escribir",
-        valor: 0.0,
-      },
-      {
-        titulo:
-          "Establecimientos rurales en categoría D en Saber 11",
+        titulo: "Establecimientos rurales en categoría D en Saber 11",
         valor: 0.0,
       },
     ],
@@ -151,35 +127,13 @@ const dataPND = {
           "Participación de exportaciones no minero energéticas y servicios",
         valor: 0.0,
       },
-      {
-        titulo: "Instalaciones fluviales intervenidas",
-        valor: 53.33,
-      },
-      {
-        titulo: "Costo logístico sobre las ventas",
-        valor: 17.9,
-      },
-      {
-        titulo: "Vías terciarias intervenidas",
-        valor: 24.38,
-      },
-      {
-        titulo: "Aeropuertos no concesionados mejorados",
-        valor: 6.67,
-      },
-      {
-        titulo: "Vías férreas estructuradas y/o adjudicadas",
-        valor: 28.92,
-      },
-      {
-        titulo: "Balance primario del SPNF",
-        valor: -105.88,
-      },
-      {
-        titulo:
-          "Variación de ingresos de micronegocios atendidos",
-        valor: 0.0,
-      },
+      { titulo: "Instalaciones fluviales intervenidas", valor: 53.33 },
+      { titulo: "Costo logístico sobre las ventas", valor: 17.9 },
+      { titulo: "Vías terciarias intervenidas", valor: 24.38 },
+      { titulo: "Aeropuertos no concesionados mejorados", valor: 6.67 },
+      { titulo: "Vías férreas estructuradas y/o adjudicadas", valor: 28.92 },
+      { titulo: "Balance primario del SPNF", valor: -105.88 },
+      { titulo: "Variación de ingresos de micronegocios atendidos", valor: 0.0 },
       {
         titulo:
           "Unidades productivas de economía popular con inclusión financiera",
@@ -191,8 +145,7 @@ const dataPND = {
         valor: 30.73,
       },
       {
-        titulo:
-          "Activos especiales para fortalecer economías populares",
+        titulo: "Activos especiales para fortalecer economías populares",
         valor: 152.5,
       },
     ],
@@ -226,8 +179,7 @@ const dataPND = {
         valor: 52.11,
       },
       {
-        titulo:
-          "Mujeres en cargos directivos en entidades públicas",
+        titulo: "Mujeres en cargos directivos en entidades públicas",
         valor: 84.25,
       },
     ],
@@ -294,26 +246,13 @@ const dataPND = {
   afro: {
     indicadores: [
       {
-        titulo:
-          "Promedio de 71 indicadores del PND Afrocolombiano",
+        titulo: "Promedio de 71 indicadores del PND Afrocolombiano",
         valor: 29.8,
       },
-      {
-        titulo: "Avances en institucionalidad y gestión",
-        valor: 68.26,
-      },
-      {
-        titulo: "Avances en derechos sociales básicos",
-        valor: 23.74,
-      },
-      {
-        titulo: "Liderazgo y coordinación interinstitucional",
-        valor: 9.45,
-      },
-      {
-        titulo: "Indicadores de gestión cumplidos",
-        valor: 6.52,
-      },
+      { titulo: "Avances en institucionalidad y gestión", valor: 68.26 },
+      { titulo: "Avances en derechos sociales básicos", valor: 23.74 },
+      { titulo: "Liderazgo y coordinación interinstitucional", valor: 9.45 },
+      { titulo: "Indicadores de gestión cumplidos", valor: 6.52 },
     ],
   },
 
@@ -336,22 +275,69 @@ const dataPND = {
       },
     ],
   },
-
-  territoriales: {
-    pie: [
-      { label: "Articulación de planes territoriales con el PND", valor: 65 },
-      { label: "Proyectos priorizados con enfoque PND", valor: 40 },
-      { label: "Participación de CTP en seguimiento", valor: 55 },
-      { label: "Capacidad técnica territorial", valor: 45 },
-      { label: "Uso de información para decisiones", valor: 50 },
-    ],
-  },
 };
 
-// ================= HELPERS GRÁFICAS =================
+/* ================= TARJETAS DE INDICADORES ================= */
+function renderCards(sectorKey, containerId, lista) {
+  const root = document.getElementById(containerId);
+  if (!root || !lista) return;
+  root.innerHTML = "";
+
+  lista.forEach((ind, idx) => {
+    const card = document.createElement("div");
+    card.className = "ind-card";
+
+    const titulo = ind.titulo || ind.label || "";
+    const valorTexto = formatValue(ind.valor);
+
+    card.innerHTML = `
+      <div class="ind-title">
+        ${titulo}
+      </div>
+      <div class="ind-meta">
+        Valor del indicador: <strong>${valorTexto}</strong>
+      </div>
+      <div class="ind-tabs">
+        <button class="ind-btn active" data-tab="avance_${idx}">Avances</button>
+        <button class="ind-btn" data-tab="alerta_${idx}">Alertas</button>
+      </div>
+      <div class="ind-body avance" data-body="avance_${idx}">
+        <!-- Escribe aquí el resumen de avances de este indicador. -->
+      </div>
+      <div class="ind-body alerta" data-body="alerta_${idx}" style="display:none;">
+        <!-- Escribe aquí las alertas y riesgos asociados a este indicador. -->
+      </div>
+    `;
+
+    root.appendChild(card);
+  });
+
+  // Tabs Avances / Alertas dentro de cada tarjeta
+  root.querySelectorAll(".ind-card").forEach((card) => {
+    const btns = card.querySelectorAll(".ind-btn");
+    const bodies = card.querySelectorAll(".ind-body");
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btns.forEach((b) => b.classList.remove("active"));
+        bodies.forEach((b) => (b.style.display = "none"));
+        btn.classList.add("active");
+        const target = btn.dataset.tab;
+        const targetBody = card.querySelector(`[data-body="${target}"]`);
+        if (targetBody) targetBody.style.display = "block";
+      });
+    });
+  });
+}
+
+function setIndicatorCount(sectorKey, count) {
+  const el = document.querySelector(`[data-ind-count="${sectorKey}"]`);
+  if (el) el.textContent = count;
+}
+
+/* ================= HELPERS GRÁFICAS ================= */
 let charts = {};
 
-function shortenLabel(text, maxLen = 32) {
+function shortenLabel(text, maxLen = 30) {
   if (!text) return "";
   if (text.length <= maxLen) return text;
   return text.slice(0, maxLen - 1) + "…";
@@ -371,7 +357,6 @@ function formatPercent(value) {
 function formatValue(v) {
   const n = Number(v);
   if (!Number.isFinite(n)) return "";
-  // Si parece porcentaje (entre -200 y 300 aprox.)
   if (Math.abs(n) <= 300) {
     return formatPercent(n);
   }
@@ -385,21 +370,35 @@ function makeChart(id, type, labels, datasets, extraOptions = {}) {
   const ctx = canvas.getContext("2d");
   if (charts[id]) charts[id].destroy();
 
+  const baseOptions = {
+    responsive: true,
+    maintainAspectRatio: true, // evita que se estire de forma extraña
+    aspectRatio: 2,            // ancho/alto moderado
+    animation: false,
+    plugins: {
+      legend: {
+        labels: {
+          font: { size: 10 },
+        },
+      },
+    },
+  };
+
   charts[id] = new Chart(ctx, {
     type,
     data: { labels, datasets },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: false,
-      plugins: {
-        legend: { display: true, position: "bottom" },
-      },
+      ...baseOptions,
       ...extraOptions,
+      plugins: {
+        ...baseOptions.plugins,
+        ...(extraOptions.plugins || {}),
+      },
     },
   });
 }
 
+/* Barras con etiquetas recortadas */
 function makeSectorBarChart(canvasId, lista) {
   const fullLabels = lista.map((i) => i.titulo || i.label);
   const shortLabels = fullLabels.map((t) => shortenLabel(t));
@@ -414,7 +413,7 @@ function makeSectorBarChart(canvasId, lista) {
     shortLabels,
     [
       {
-        label: "Valor",
+        label: "Valor del indicador",
         data: vals,
         backgroundColor: colors,
       },
@@ -437,76 +436,10 @@ function makeSectorBarChart(canvasId, lista) {
   );
 }
 
-function makeSectorPieChart(canvasId, lista) {
-  const fullLabels = lista.map((i) => i.titulo || i.label);
-  const shortLabels = fullLabels.map((t) => shortenLabel(t));
-  const vals = getNumericVals(lista);
-  const colors = lista.map(
-    (_, i) => `hsl(${(i * 360) / lista.length}, 70%, 55%)`
-  );
-
-  makeChart(
-    canvasId,
-    "pie",
-    shortLabels,
-    [
-      {
-        data: vals,
-        backgroundColor: colors,
-      },
-    ],
-    {
-      plugins: {
-        legend: {
-          position: "bottom",
-          labels: {
-            boxWidth: 12,
-            font: { size: 9 },
-            padding: 6,
-          },
-        },
-        tooltip: {
-          callbacks: {
-            title: (items) => fullLabels[items[0].dataIndex],
-            label: (ctx) => `${formatValue(ctx.parsed)}`,
-          },
-        },
-      },
-    }
-  );
-}
-
-// ================= TARJETAS DE INDICADORES =================
-function renderCards(sectorKey, containerId, lista) {
-  const root = document.getElementById(containerId);
-  if (!root || !lista) return;
-  root.innerHTML = "";
-
-  lista.forEach((ind) => {
-    const card = document.createElement("div");
-    card.className = "ind-card";
-    card.innerHTML = `
-      <div class="ind-title">
-        ${ind.titulo || ind.label}
-      </div>
-      <div class="ind-meta">
-        Valor de seguimiento: <strong>${formatValue(ind.valor)}</strong>
-      </div>
-    `;
-    root.appendChild(card);
-  });
-}
-
-function setIndicatorCount(sectorKey, count) {
-  const el = document.querySelector(`[data-ind-count="${sectorKey}"]`);
-  if (el) el.textContent = count;
-}
-
-// ================= GENERAL =================
+/* ================= GENERAL ================= */
 function loadGeneral() {
-  const base = dataPND.general.avance;
-  const av = base;
-  const pe = 100 - base;
+  const av = dataPND.general.avance;
+  const pe = Math.max(0, 100 - av);
 
   const labelAv = document.getElementById("globalPercent");
   const bar = document.getElementById("globalProgress");
@@ -571,11 +504,10 @@ function loadGeneral() {
   );
 }
 
-// ================= SECTORES =================
+/* ================= SECTORES ================= */
 function loadEducativo() {
   const lista = dataPND.educativo.indicadores;
   makeSectorBarChart("eduChart", lista);
-  makeSectorPieChart("eduPie", lista);
   renderCards("edu", "eduIndicators", lista);
   setIndicatorCount("edu", lista.length);
 }
@@ -583,7 +515,6 @@ function loadEducativo() {
 function loadEconomico() {
   const lista = dataPND.economico.indicadores;
   makeSectorBarChart("ecoChart", lista);
-  makeSectorPieChart("ecoPie", lista);
   renderCards("eco", "ecoIndicators", lista);
   setIndicatorCount("eco", lista.length);
 }
@@ -591,7 +522,6 @@ function loadEconomico() {
 function loadMujeres() {
   const lista = dataPND.mujeres.indicadores;
   makeSectorBarChart("mujChart", lista);
-  makeSectorPieChart("mujPie", lista);
   renderCards("muj", "mujIndicators", lista);
   setIndicatorCount("muj", lista.length);
 }
@@ -599,7 +529,6 @@ function loadMujeres() {
 function loadSocial() {
   const lista = dataPND.social.indicadores;
   makeSectorBarChart("socChart", lista);
-  makeSectorPieChart("socPie", lista);
   renderCards("soc", "socIndicators", lista);
   setIndicatorCount("soc", lista.length);
 }
@@ -607,7 +536,6 @@ function loadSocial() {
 function loadEco2() {
   const lista = dataPND.ecologico.indicadores;
   makeSectorBarChart("eco2Chart", lista);
-  makeSectorPieChart("eco2Pie", lista);
   renderCards("eco2", "eco2Indicators", lista);
   setIndicatorCount("eco2", lista.length);
 }
@@ -615,7 +543,6 @@ function loadEco2() {
 function loadAfro() {
   const lista = dataPND.afro.indicadores;
   makeSectorBarChart("afroChart", lista);
-  makeSectorPieChart("afroPie", lista);
   renderCards("afro", "afroIndicators", lista);
   setIndicatorCount("afro", lista.length);
 }
@@ -623,20 +550,12 @@ function loadAfro() {
 function loadCom() {
   const lista = dataPND.comunitario.indicadores;
   makeSectorBarChart("comChart", lista);
-  makeSectorPieChart("comPie", lista);
   renderCards("com", "comIndicators", lista);
   setIndicatorCount("com", lista.length);
 }
 
-function loadTerr() {
-  const lista = dataPND.territoriales.pie;
-  makeSectorBarChart("terrChart", lista);
-  makeSectorPieChart("terrPie", lista);
-}
-
-// ================= INICIALIZAR TODO =================
+/* ================= INICIALIZAR TODO ================= */
 function initAll() {
-  setupTabs();
   loadGeneral();
   loadEducativo();
   loadEconomico();
@@ -645,49 +564,27 @@ function initAll() {
   loadEco2();
   loadAfro();
   loadCom();
-  loadTerr();
-
-  // En la versión pública ocultamos los controles de edición si existieran en el HTML
-  if (!IS_LOCAL) {
-    const adminBar = document.querySelector(".admin-bar");
-    if (adminBar) adminBar.style.display = "none";
-
-    document.querySelectorAll(".upload-actions, .btn-photo").forEach((el) => {
-      el.style.display = "none";
-    });
-  }
 }
 
 document.addEventListener("DOMContentLoaded", initAll);
 
-// ================= BOTONES ↻ =================
-document.addEventListener("DOMContentLoaded", () => {
-  const chartReloadMap = {
-    generalChart: loadGeneral,
-    sectorsChart: loadGeneral,
-    eduChart: loadEducativo,
-    eduPie: loadEducativo,
-    ecoChart: loadEconomico,
-    ecoPie: loadEconomico,
-    mujChart: loadMujeres,
-    mujPie: loadMujeres,
-    socChart: loadSocial,
-    socPie: loadSocial,
-    eco2Chart: loadEco2,
-    eco2Pie: loadEco2,
-    afroChart: loadAfro,
-    afroPie: loadAfro,
-    comChart: loadCom,
-    comPie: loadCom,
-    terrChart: loadTerr,
-    terrPie: loadTerr,
-  };
+/* ================= BOTONES ↻ ================= */
+const chartReloadMap = {
+  generalChart: loadGeneral,
+  sectorsChart: loadGeneral,
+  eduChart: loadEducativo,
+  ecoChart: loadEconomico,
+  mujChart: loadMujeres,
+  socChart: loadSocial,
+  eco2Chart: loadEco2,
+  afroChart: loadAfro,
+  comChart: loadCom,
+};
 
-  document.querySelectorAll(".chart-refresh").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const id = btn.dataset.refresh;
-      const fn = chartReloadMap[id];
-      if (typeof fn === "function") fn();
-    });
+document.querySelectorAll(".chart-refresh").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.refresh;
+    const fn = chartReloadMap[id];
+    if (typeof fn === "function") fn();
   });
 });
