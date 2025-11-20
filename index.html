@@ -5,22 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Revista de Seguimiento PND 2022–2026</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Barra de administración (solo se oculta en producción por JS) -->
-  <div class="admin-bar">
-    <div class="brand-chip">
-      <span class="chip chip-yellow"></span>
-      <span class="chip chip-blue"></span>
-      <span class="chip chip-red"></span>
-    </div>
-    <div class="admin-actions">
-      <span class="admin-label">Modo edición</span>
-      <button id="toggleEdit" class="btn btn-edit">Activar</button>
-    </div>
-  </div>
-
   <!-- Encabezado principal -->
   <header class="site-header">
     <div class="header-left">
@@ -106,7 +93,6 @@
                 <div class="block-note">
                   <small>
                     La información de avance de los sectores se encuentra a fecha de corte de junio de 2025.
-                    Para la construcción de la gráfica se analizaron indicadores específicos por sector.
                   </small>
                 </div>
               </div>
@@ -116,8 +102,8 @@
                   <h5>Distribución: avance vs por ejecutar</h5>
                   <button class="btn btn-ghost chart-refresh" data-refresh="generalChart">↻</button>
                 </div>
-                <div class="chart-wrapper chart-short">
-                  <canvas id="generalChart"></canvas>
+                <div class="chart-box">
+                  <canvas id="generalChart" class="chart-canvas"></canvas>
                 </div>
               </div>
             </div>
@@ -128,8 +114,8 @@
                 <h5>Comparativo de sectores (0–100%) y línea PND general</h5>
                 <button class="btn btn-ghost chart-refresh" data-refresh="sectorsChart">↻</button>
               </div>
-              <div class="chart-wrapper chart-wide">
-                <canvas id="sectorsChart"></canvas>
+              <div class="chart-box">
+                <canvas id="sectorsChart" class="chart-canvas"></canvas>
               </div>
             </div>
 
@@ -139,7 +125,7 @@
                 Comentarios generales del informe
               </h4>
               <ul class="comment-list">
-                <li></li>
+                <!-- Agrega aquí los comentarios generales del informe (copia desde tu pestaña vieja) -->
               </ul>
             </div>
 
@@ -149,7 +135,7 @@
                 Recomendaciones generales del CNP
               </h4>
               <ul class="rec-list">
-                <li></li>
+                <!-- Agrega aquí las recomendaciones generales del CNP -->
               </ul>
             </div>
           </div>
@@ -158,14 +144,7 @@
           <aside class="general-side">
             <div class="block photo-card">
               <h4 class="block-title">Consejo Nacional de Planeación</h4>
-              <img id="generalPhoto" class="hero-img" alt="Imagen general de la revista">
-              <div class="upload-actions">
-                <label class="btn btn-secondary">
-                  Subir foto
-                  <input id="photoInput" type="file" accept="image/*" hidden>
-                </label>
-                <button id="clearPhoto" class="btn btn-ghost">Quitar</button>
-              </div>
+              <img src="img/general-pnd.jpg" class="hero-img" alt="Consejo Nacional de Planeación">
             </div>
           </aside>
         </div>
@@ -183,18 +162,15 @@
               Línea de transformación principal: Seguridad Humana y Justicia Social.
             </div>
           </div>
-          <!-- 1 consejero -->
+          <!-- 1 consejera -->
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector educativo y cultural (1)</div>
+            <div class="consej-title">Consejera del sector educativo y cultural</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a educativo">
-                <button class="btn btn-ghost btn-photo">
-                  Foto
-                </button>
+                <img class="consejero-foto" src="img/consejero-edu-1.jpg" alt="Foto consejera sector educativo">
               </div>
               <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a</div>
+                <div class="consej-name">Nombre consejera</div>
                 <div class="consej-org">Organización / Territorio</div>
               </div>
             </div>
@@ -210,32 +186,24 @@
           </p>
         </div>
 
-        <!-- Gráficos (barra + torta) -->
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores de educación y cultura</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="eduChart">↻</button>
-            </div>
-            <div class="chart-wrapper chart-tall">
-              <canvas id="eduChart"></canvas>
-            </div>
+        <!-- Gráfico principal -->
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores de educación y cultura</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="eduChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de avances</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="eduPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="eduPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="eduChart" class="chart-canvas"></canvas>
           </div>
+          <p class="chart-help">
+            Etiquetas abreviadas: pasa el cursor para ver el nombre completo de cada indicador.
+          </p>
         </div>
 
         <!-- Indicadores -->
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector educativo y cultural
+            Indicadores del sector educativo y cultural
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="edu">17</span> indicadores)
             </span>
@@ -247,7 +215,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector educativo y cultural</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector educativo y cultural -->
           </ul>
         </div>
       </section>
@@ -270,8 +238,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 1">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-eco-1.jpg" alt="Foto consejero/a 1 sector económico">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 1</div>
@@ -281,8 +248,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 2">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-eco-2.jpg" alt="Foto consejero/a 2 sector económico">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 2</div>
@@ -292,8 +258,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 3">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-eco-3.jpg" alt="Foto consejero/a 3 sector económico">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 3</div>
@@ -303,8 +268,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 4">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-eco-4.jpg" alt="Foto consejero/a 4 sector económico">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 4</div>
@@ -322,30 +286,22 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores económicos</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="ecoChart">↻</button>
-            </div>
-            <div class="chart-wrapper chart-tall">
-              <canvas id="ecoChart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores económicos</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="ecoChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Composición de avances y rezagos</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="ecoPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="ecoPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="ecoChart" class="chart-canvas"></canvas>
           </div>
+          <p class="chart-help">
+            Cada barra resume un indicador económico clave. Pasa el cursor para ver el nombre completo.
+          </p>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector económico
+            Indicadores del sector económico
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="eco">17</span> indicadores)
             </span>
@@ -356,7 +312,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector económico</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector económico -->
           </ul>
         </div>
       </section>
@@ -379,8 +335,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejera 1">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-muj-1.jpg" alt="Foto consejera 1 sector mujeres">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejera 1</div>
@@ -390,8 +345,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejera 2">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-muj-2.jpg" alt="Foto consejera 2 sector mujeres">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejera 2</div>
@@ -409,30 +363,22 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores sector mujeres</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="mujChart">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="mujChart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores sector mujeres</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="mujChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de cumplimientos</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="mujPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="mujPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="mujChart" class="chart-canvas"></canvas>
           </div>
+          <p class="chart-help">
+            El gráfico permite comparar rápidamente los avances relativos de cada indicador.
+          </p>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector mujeres
+            Indicadores del sector mujeres
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="muj">8</span> indicadores)
             </span>
@@ -443,7 +389,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector mujeres</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector mujeres -->
           </ul>
         </div>
       </section>
@@ -460,16 +406,27 @@
               Línea de transformación: Seguridad Humana y Justicia Social.
             </div>
           </div>
-          <!-- Puedes duplicar filas si necesitas más consejeros -->
+          <!-- 2 consejeros -->
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector social</div>
+            <div class="consej-title">Consejeros/as del sector social (2)</div>
+            <!-- Consejero/a 1 -->
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a social">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-soc-1.jpg" alt="Foto consejero/a 1 sector social">
               </div>
               <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a</div>
+                <div class="consej-name">Nombre consejero/a 1</div>
+                <div class="consej-org">Organización social / Territorio</div>
+              </div>
+            </div>
+
+            <!-- Consejero/a 2 -->
+            <div class="consejero-row">
+              <div class="consejero-avatar-wrap">
+                <img class="consejero-foto" src="img/consejero-soc-2.jpg" alt="Foto consejero/a 2 sector social">
+              </div>
+              <div class="consej-data">
+                <div class="consej-name">Nombre consejero/a 2</div>
                 <div class="consej-org">Organización social / Territorio</div>
               </div>
             </div>
@@ -484,30 +441,19 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores sociales</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="socChart">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="socChart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores sociales</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="socChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de avances</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="socPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="socPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="socChart" class="chart-canvas"></canvas>
           </div>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector social
+            Indicadores del sector social
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="soc">5</span> indicadores)
             </span>
@@ -518,7 +464,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector social</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector social -->
           </ul>
         </div>
       </section>
@@ -541,8 +487,7 @@
             <div class="consej-title">Consejero/a del sector ecológico (1)</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a ecológico">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-eco2-1.jpg" alt="Foto consejero/a sector ecológico">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a</div>
@@ -560,30 +505,19 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores ecológicos</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="eco2Chart">↻</button>
-            </div>
-            <div class="chart-wrapper chart-tall">
-              <canvas id="eco2Chart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores ecológicos</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="eco2Chart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Comportamientos comparados</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="eco2Pie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="eco2Pie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="eco2Chart" class="chart-canvas"></canvas>
           </div>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector ecológico
+            Indicadores del sector ecológico
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="eco2">9</span> indicadores)
             </span>
@@ -594,7 +528,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector ecológico</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector ecológico -->
           </ul>
         </div>
       </section>
@@ -616,8 +550,7 @@
             <div class="consej-title">Consejero/a del sector afrocolombiano (1)</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a afro">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-afro-1.jpg" alt="Foto consejero/a sector afrocolombiano">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a</div>
@@ -635,30 +568,19 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Avances por componentes</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="afroChart">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="afroChart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Avances por componentes</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="afroChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de avances sector afro</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="afroPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="afroPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="afroChart" class="chart-canvas"></canvas>
           </div>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector afrocolombiano
+            Indicadores del sector afrocolombiano
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="afro">5</span> indicadores)
             </span>
@@ -669,7 +591,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector afrocolombiano</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector afrocolombiano -->
           </ul>
         </div>
       </section>
@@ -691,8 +613,7 @@
             <div class="consej-title">Consejero/a del sector comunitario (1)</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a comunitario">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-com-1.jpg" alt="Foto consejero/a sector comunitario">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a</div>
@@ -710,30 +631,19 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores comunitarios</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="comChart">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="comChart"></canvas>
-            </div>
+        <div class="block">
+          <div class="chart-header">
+            <h5>Indicadores comunitarios</h5>
+            <button class="btn btn-ghost chart-refresh" data-refresh="comChart">↻</button>
           </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de avance conjunto</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="comPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="comPie"></canvas>
-            </div>
+          <div class="chart-box">
+            <canvas id="comChart" class="chart-canvas"></canvas>
           </div>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
-            Todos los indicadores del sector comunitario
+            Indicadores del sector comunitario
             <span class="ind-count-pill">
               (<span class="ind-count" data-ind-count="com">3</span> indicadores)
             </span>
@@ -744,7 +654,7 @@
         <div class="block block-recs">
           <h4 class="block-title">Recomendaciones del CNP para el sector comunitario</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones sector comunitario -->
           </ul>
         </div>
       </section>
@@ -768,8 +678,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 1">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-terr-1.jpg" alt="Foto consejero/a 1 territorial">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 1</div>
@@ -779,8 +688,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 2">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-terr-2.jpg" alt="Foto consejero/a 2 territorial">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 2</div>
@@ -790,8 +698,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 3">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-terr-3.jpg" alt="Foto consejero/a 3 territorial">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 3</div>
@@ -801,8 +708,7 @@
 
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" alt="Foto consejero/a 4">
-                <button class="btn btn-ghost btn-photo">Foto</button>
+                <img class="consejero-foto" src="img/consejero-terr-4.jpg" alt="Foto consejero/a 4 territorial">
               </div>
               <div class="consej-data">
                 <div class="consej-name">Nombre consejero/a 4</div>
@@ -820,27 +726,6 @@
           </p>
         </div>
 
-        <div class="grid grid-2">
-          <div class="block">
-            <div class="chart-header">
-              <h5>Indicadores clave territoriales</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="terrChart">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="terrChart"></canvas>
-            </div>
-          </div>
-          <div class="block">
-            <div class="chart-header">
-              <h5>Distribución de avances percibidos</h5>
-              <button class="btn btn-ghost chart-refresh" data-refresh="terrPie">↻</button>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="terrPie"></canvas>
-            </div>
-          </div>
-        </div>
-
         <!-- SOLO DOS CUADROS DE TEXTO -->
         <div class="block">
           <h4 class="block-title highlight">
@@ -849,19 +734,23 @@
           <div class="grid grid-2 terr-perspectivas">
             <div class="block">
               <h5 class="block-title">Alcaldías</h5>
-              <p class="meta"></p>
+              <p class="meta">
+                <!-- Síntesis de la perspectiva de las alcaldías -->
+              </p>
             </div>
             <div class="block">
               <h5 class="block-title">Gobernaciones y CTP</h5>
-              <p class="meta"></p>
+              <p class="meta">
+                <!-- Síntesis de la perspectiva de las gobernaciones y CTP -->
+              </p>
             </div>
           </div>
         </div>
 
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para entes territoriales y CTP</h4>
+          <h4 class="block-title">Perspectiva territorial</h4>
           <ul class="rec-list">
-            <li></li>
+            <!-- Recomendaciones desde la perspectiva territorial -->
           </ul>
         </div>
       </section>
