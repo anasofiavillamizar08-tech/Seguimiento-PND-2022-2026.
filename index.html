@@ -8,10 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Encabezado principal -->
+
   <header class="site-header">
     <div class="header-left">
-      <img src="logo-cnp.png" alt="Logo CNP" class="cnp-logo"/>
+      <img src="https://placehold.co/200x80?text=Logo+CNP" alt="Logo CNP" class="cnp-logo"/>
       <div class="title-wrap">
         <h1 class="headline">
           REVISTA DE SEGUIMIENTO AL PLAN NACIONAL DE DESARROLLO 2022–2026
@@ -22,14 +22,13 @@
       </div>
     </div>
     <div class="header-right">
-      <a class="btn btn-primary" href="Revista seguimiento PND copia.pdf" download>
+      <a class="btn btn-primary" href="#" onclick="alert('Aquí se descargaría el PDF final'); return false;">
         Descargar concepto completo (PDF)
       </a>
     </div>
   </header>
 
   <main class="layout">
-    <!-- Sidebar de pestañas -->
     <aside class="sidebar">
       <div class="sidebar-group">
         <div class="sidebar-title">Sección general</div>
@@ -48,13 +47,10 @@
       </div>
     </aside>
 
-    <!-- Contenido principal -->
     <section class="content">
 
-      <!-- ============ PANEL GENERAL ============ -->
       <section id="general" class="panel active">
         <div class="general-layout">
-          <!-- Columna principal -->
           <div class="general-main">
             <div class="block block-intro">
               <div class="section-kicker">Visión general</div>
@@ -79,7 +75,6 @@
               </p>
             </div>
 
-            <!-- Avance global + gráfico doughnut -->
             <div class="grid grid-2">
               <div class="block">
                 <div class="progress-head">
@@ -100,7 +95,6 @@
               <div class="block">
                 <div class="chart-header">
                   <h5>Distribución: avance vs por ejecutar</h5>
-                  <button class="btn btn-ghost chart-refresh" data-refresh="generalChart">↻</button>
                 </div>
                 <div class="chart-box">
                   <canvas id="generalChart" class="chart-canvas"></canvas>
@@ -108,76 +102,64 @@
               </div>
             </div>
 
-            <!-- Comparativo por sectores -->
             <div class="block">
               <div class="chart-header">
                 <h5>Comparativo de sectores (0–100%) y línea PND general</h5>
-                <button class="btn btn-ghost chart-refresh" data-refresh="sectorsChart">↻</button>
               </div>
-              <div class="chart-box">
+              <div class="chart-box large-chart-box">
                 <canvas id="sectorsChart" class="chart-canvas"></canvas>
               </div>
             </div>
 
-            <!-- Comentarios generales -->
             <div class="block">
-              <h4 class="block-title">
-                Comentarios generales del informe
-              </h4>
+              <h4 class="block-title">Comentarios generales del informe</h4>
               <ul class="comment-list">
-                <!-- Agrega aquí los comentarios generales del informe (copia desde tu pestaña vieja) -->
+                <li>Se evidencia una necesidad urgente de articulación intersectorial.</li>
+                <li>Los indicadores de impacto requieren mayor trazabilidad en territorios apartados.</li>
               </ul>
             </div>
 
-            <!-- Recomendaciones finales generales -->
             <div class="block block-recs">
-              <h4 class="block-title">
-                Recomendaciones generales del CNP
-              </h4>
+              <h4 class="block-title">Recomendaciones generales del CNP</h4>
               <ul class="rec-list">
-                <!-- Agrega aquí las recomendaciones generales del CNP -->
+                <li>Fortalecer los mecanismos de reporte de información cualitativa.</li>
+                <li>Incrementar la participación ciudadana en la fase de ejecución.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Columna lateral con foto fija -->
           <aside class="general-side">
             <div class="block photo-card">
               <h4 class="block-title">Consejo Nacional de Planeación</h4>
-              <img src="img/general-pnd.jpg" class="hero-img" alt="Consejo Nacional de Planeación">
+              <img src="https://placehold.co/600x400/0033a0/ffffff?text=Plenaria+CNP" class="hero-img" alt="Imagen general de la revista">
             </div>
           </aside>
         </div>
       </section>
 
-      <!-- ============ PANEL EDUCACIÓN Y CULTURA ============ -->
       <section id="educativo" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-edu">Sector 01</div>
-            <h3 class="section-title">
-              Sector Educativo y Cultural
-            </h3>
+            <h3 class="section-title">Sector Educativo y Cultural</h3>
             <div class="meta">
               Línea de transformación principal: Seguridad Humana y Justicia Social.
             </div>
           </div>
-          <!-- 1 consejera -->
           <div class="consejeros-box">
             <div class="consej-title">Consejera del sector educativo y cultural</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-edu-1.jpg" alt="Foto consejera sector educativo">
+                <img class="consejero-foto" src="https://ui-avatars.com/api/?name=E+C&background=1f8947&color=fff" alt="Foto consejero/a">
               </div>
               <div class="consej-data">
-                <div class="consej-name">Nombre consejera</div>
-                <div class="consej-org">Organización / Territorio</div>
+                <div class="consej-name">Representante Sector</div>
+                <div class="consej-org">Educación / Cultura</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Síntesis sectorial -->
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
           <p class="meta">
@@ -186,94 +168,58 @@
           </p>
         </div>
 
-        <!-- Gráfico principal -->
         <div class="block">
           <div class="chart-header">
             <h5>Indicadores de educación y cultura</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="eduChart">↻</button>
           </div>
-          <div class="chart-box">
+          <div class="chart-box large-chart-box">
             <canvas id="eduChart" class="chart-canvas"></canvas>
           </div>
-          <p class="chart-help">
-            Etiquetas abreviadas: pasa el cursor para ver el nombre completo de cada indicador.
-          </p>
+          <p class="chart-help">Etiquetas abreviadas: pase el cursor para ver detalles.</p>
         </div>
 
-        <!-- Indicadores -->
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector educativo y cultural
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="edu">17</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="edu"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="eduIndicators"></div>
         </div>
 
-        <!-- Recomendaciones por sector -->
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector educativo y cultural</h4>
+          <h4 class="block-title">Recomendaciones del CNP</h4>
           <ul class="rec-list">
-            <!-- Recomendaciones sector educativo y cultural -->
+             <li>Priorizar la infraestructura rural educativa.</li>
           </ul>
         </div>
       </section>
 
-      <!-- ============ PANEL ECONÓMICO ============ -->
       <section id="economico" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-eco">Sector 02</div>
-            <h3 class="section-title">
-              Sector Económico
-            </h3>
+            <h3 class="section-title">Sector Económico</h3>
             <div class="meta">
               Líneas: Transformación productiva, internacionalización y acción climática; estabilidad macroeconómica.
             </div>
           </div>
-          <!-- 4 consejeros -->
           <div class="consejeros-box">
             <div class="consej-title">Consejeros/as del sector económico (4)</div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-eco-1.jpg" alt="Foto consejero/a 1 sector económico">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 1</div>
-                <div class="consej-org">Sector económico / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+1&background=0033a0&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Gremio</div></div>
             </div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-eco-2.jpg" alt="Foto consejero/a 2 sector económico">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 2</div>
-                <div class="consej-org">Sector económico / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+2&background=0033a0&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 2</div><div class="consej-org">Producción</div></div>
             </div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-eco-3.jpg" alt="Foto consejero/a 3 sector económico">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 3</div>
-                <div class="consej-org">Sector económico / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+3&background=0033a0&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 3</div><div class="consej-org">Comercio</div></div>
             </div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-eco-4.jpg" alt="Foto consejero/a 4 sector económico">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 4</div>
-                <div class="consej-org">Sector económico / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+4&background=0033a0&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 4</div><div class="consej-org">Servicios</div></div>
             </div>
           </div>
         </div>
@@ -289,68 +235,44 @@
         <div class="block">
           <div class="chart-header">
             <h5>Indicadores económicos</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="ecoChart">↻</button>
           </div>
-          <div class="chart-box">
+          <div class="chart-box large-chart-box">
             <canvas id="ecoChart" class="chart-canvas"></canvas>
           </div>
-          <p class="chart-help">
-            Cada barra resume un indicador económico clave. Pasa el cursor para ver el nombre completo.
-          </p>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector económico
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="eco">17</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="eco"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="ecoIndicators"></div>
         </div>
-
+        
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector económico</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector económico -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Acelerar la ejecución de proyectos de infraestructura vial.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL MUJERES ============ -->
       <section id="mujeres" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-muj">Sector 03</div>
-            <h3 class="section-title">
-              Sector Mujeres
-            </h3>
+            <h3 class="section-title">Sector Mujeres</h3>
             <div class="meta">
               Líneas: Seguridad Humana y Justicia Social; Derecho humano a la alimentación.
             </div>
           </div>
-          <!-- 2 consejeras -->
           <div class="consejeros-box">
             <div class="consej-title">Consejeras del sector mujeres (2)</div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-muj-1.jpg" alt="Foto consejera 1 sector mujeres">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejera 1</div>
-                <div class="consej-org">Organización de mujeres / Territorio</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=M+1&background=d81b60&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejera 1</div><div class="consej-org">Org. Mujeres</div></div>
             </div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-muj-2.jpg" alt="Foto consejera 2 sector mujeres">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejera 2</div>
-                <div class="consej-org">Organización de mujeres / Territorio</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=M+2&background=d81b60&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejera 2</div><div class="consej-org">Territorial</div></div>
             </div>
           </div>
         </div>
@@ -366,69 +288,41 @@
         <div class="block">
           <div class="chart-header">
             <h5>Indicadores sector mujeres</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="mujChart">↻</button>
           </div>
           <div class="chart-box">
             <canvas id="mujChart" class="chart-canvas"></canvas>
           </div>
-          <p class="chart-help">
-            El gráfico permite comparar rápidamente los avances relativos de cada indicador.
-          </p>
         </div>
 
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector mujeres
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="muj">8</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="muj"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="mujIndicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector mujeres</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector mujeres -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Fortalecer las rutas de atención en zonas rurales dispersas.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL SOCIAL ============ -->
       <section id="social" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-soc">Sector 04</div>
-            <h3 class="section-title">
-              Sector Social
-            </h3>
-            <div class="meta">
-              Línea de transformación: Seguridad Humana y Justicia Social.
-            </div>
+            <h3 class="section-title">Sector Social</h3>
+            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
           </div>
-          <!-- 2 consejeros -->
           <div class="consejeros-box">
             <div class="consej-title">Consejeros/as del sector social (2)</div>
-            <!-- Consejero/a 1 -->
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-soc-1.jpg" alt="Foto consejero/a 1 sector social">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 1</div>
-                <div class="consej-org">Organización social / Territorio</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=S+1&background=ce1126&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Social</div></div>
             </div>
-
-            <!-- Consejero/a 2 -->
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-soc-2.jpg" alt="Foto consejero/a 2 sector social">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 2</div>
-                <div class="consej-org">Organización social / Territorio</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=S+2&background=ce1126&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero 2</div><div class="consej-org">Vivienda</div></div>
             </div>
           </div>
         </div>
@@ -442,10 +336,7 @@
         </div>
 
         <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores sociales</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="socChart">↻</button>
-          </div>
+          <div class="chart-header"><h5>Indicadores sociales</h5></div>
           <div class="chart-box">
             <canvas id="socChart" class="chart-canvas"></canvas>
           </div>
@@ -454,45 +345,30 @@
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector social
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="soc">5</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="soc"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="socIndicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector social</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector social -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Mejorar la focalización de subsidios de vivienda.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL ECOLÓGICO ============ -->
       <section id="ecologico" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-eco2">Sector 05</div>
-            <h3 class="section-title">
-              Sector Ecológico
-            </h3>
+            <h3 class="section-title">Sector Ecológico</h3>
             <div class="meta">
-              Líneas: Ordenamiento del territorio alrededor del agua y justicia ambiental;
-              transformación productiva, internacionalización y acción climática.
+              Líneas: Ordenamiento del territorio alrededor del agua y justicia ambiental.
             </div>
           </div>
-          <!-- 1 consejero -->
           <div class="consejeros-box">
             <div class="consej-title">Consejero/a del sector ecológico (1)</div>
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-eco2-1.jpg" alt="Foto consejero/a sector ecológico">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a</div>
-                <div class="consej-org">Organización ambiental / Territorio</div>
-              </div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Eco+2&background=1b5e20&color=fff"></div>
+              <div class="consej-data"><div class="consej-name">Consejero Ambiental</div><div class="consej-org">Ambiental</div></div>
             </div>
           </div>
         </div>
@@ -506,10 +382,7 @@
         </div>
 
         <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores ecológicos</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="eco2Chart">↻</button>
-          </div>
+          <div class="chart-header"><h5>Indicadores ecológicos</h5></div>
           <div class="chart-box">
             <canvas id="eco2Chart" class="chart-canvas"></canvas>
           </div>
@@ -518,44 +391,28 @@
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector ecológico
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="eco2">9</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="eco2"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="eco2Indicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector ecológico</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector ecológico -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Reforzar el control ambiental en la Amazonía.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL AFROCOLOMBIANO ============ -->
       <section id="afro" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-afro">Sector 06</div>
-            <h3 class="section-title">
-              Sector Afrocolombiano
-            </h3>
-            <div class="meta">
-              Línea de transformación: Seguridad Humana y Justicia Social.
-            </div>
+            <h3 class="section-title">Sector Afrocolombiano</h3>
+            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
           </div>
-          <!-- 1 consejero -->
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector afrocolombiano (1)</div>
+            <div class="consej-title">Consejero/a del sector afro (1)</div>
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-afro-1.jpg" alt="Foto consejero/a sector afrocolombiano">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a</div>
-                <div class="consej-org">Proceso étnico / Territorio</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=A+C&background=6d4c41&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero Afro</div><div class="consej-org">PCN / Territorio</div></div>
             </div>
           </div>
         </div>
@@ -569,10 +426,7 @@
         </div>
 
         <div class="block">
-          <div class="chart-header">
-            <h5>Avances por componentes</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="afroChart">↻</button>
-          </div>
+          <div class="chart-header"><h5>Avances por componentes</h5></div>
           <div class="chart-box">
             <canvas id="afroChart" class="chart-canvas"></canvas>
           </div>
@@ -581,45 +435,29 @@
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector afrocolombiano
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="afro">5</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="afro"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="afroIndicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector afrocolombiano</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector afrocolombiano -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Garantizar recursos específicos para el capítulo étnico.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL COMUNITARIO ============ -->
       <section id="comunitario" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-com">Sector 07</div>
-            <h3 class="section-title">
-              Sector Comunitario
-            </h3>
-            <div class="meta">
-              Línea de transformación: Seguridad Humana y Justicia Social.
-            </div>
+            <h3 class="section-title">Sector Comunitario</h3>
+            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
           </div>
-          <!-- 1 consejero -->
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector comunitario (1)</div>
-            <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-com-1.jpg" alt="Foto consejero/a sector comunitario">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a</div>
-                <div class="consej-org">Organización comunitaria / Territorio</div>
-              </div>
-            </div>
+             <div class="consej-title">Consejero/a del sector comunitario (1)</div>
+             <div class="consejero-row">
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Com+1&background=f57c00&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero Comunal</div><div class="consej-org">JAC</div></div>
+             </div>
           </div>
         </div>
 
@@ -632,10 +470,7 @@
         </div>
 
         <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores comunitarios</h5>
-            <button class="btn btn-ghost chart-refresh" data-refresh="comChart">↻</button>
-          </div>
+          <div class="chart-header"><h5>Indicadores comunitarios</h5></div>
           <div class="chart-box">
             <canvas id="comChart" class="chart-canvas"></canvas>
           </div>
@@ -644,76 +479,34 @@
         <div class="block">
           <h4 class="block-title highlight">
             Indicadores del sector comunitario
-            <span class="ind-count-pill">
-              (<span class="ind-count" data-ind-count="com">3</span> indicadores)
-            </span>
+            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="com"></span> indicadores)</span>
           </h4>
           <div class="indicator-grid" id="comIndicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP para el sector comunitario</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones sector comunitario -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Fortalecer la protección de líderes sociales.</li></ul>
         </div>
       </section>
 
-      <!-- ============ PANEL ENTES TERRITORIALES ============ -->
       <section id="territoriales" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-terr">Sector 08</div>
-            <h3 class="section-title">
-              Entes territoriales y CTP
-            </h3>
+            <h3 class="section-title">Entes territoriales y CTP</h3>
             <div class="meta">
-              Líneas de transformación: Seguridad Humana y Justicia Social; Ordenamiento del territorio;
-              Transformación productiva.
+              Líneas de transformación: Seguridad Humana y Justicia Social; Ordenamiento del territorio.
             </div>
           </div>
-          <!-- 4 consejeros -->
           <div class="consejeros-box">
             <div class="consej-title">Consejeros/as territoriales (4)</div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-terr-1.jpg" alt="Foto consejero/a 1 territorial">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 1</div>
-                <div class="consej-org">CTP / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=ET+1&background=374151&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero T1</div><div class="consej-org">Región 1</div></div>
             </div>
-
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-terr-2.jpg" alt="Foto consejero/a 2 territorial">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 2</div>
-                <div class="consej-org">CTP / Región</div>
-              </div>
-            </div>
-
-            <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-terr-3.jpg" alt="Foto consejero/a 3 territorial">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 3</div>
-                <div class="consej-org">CTP / Región</div>
-              </div>
-            </div>
-
-            <div class="consejero-row">
-              <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="img/consejero-terr-4.jpg" alt="Foto consejero/a 4 territorial">
-              </div>
-              <div class="consej-data">
-                <div class="consej-name">Nombre consejero/a 4</div>
-                <div class="consej-org">CTP / Región</div>
-              </div>
+                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=ET+2&background=374151&color=fff"></div>
+                <div class="consej-data"><div class="consej-name">Consejero T2</div><div class="consej-org">Región 2</div></div>
             </div>
           </div>
         </div>
@@ -721,37 +514,21 @@
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
           <p class="meta">
-            Los CTP y las administraciones territoriales destacan avances en planeación participativa, pero señalan
-            serios problemas de articulación Nación–territorio y rigidez en el uso de los recursos.
+             La articulación entre la Nación y los territorios sigue siendo un desafío, con brechas importantes
+             en la capacidad técnica de los Consejos Territoriales de Planeación (CTP).
           </p>
         </div>
 
-        <!-- SOLO DOS CUADROS DE TEXTO -->
         <div class="block">
-          <h4 class="block-title highlight">
-            Perspectivas territoriales sobre el PND
-          </h4>
-          <div class="grid grid-2 terr-perspectivas">
-            <div class="block">
-              <h5 class="block-title">Alcaldías</h5>
-              <p class="meta">
-                <!-- Síntesis de la perspectiva de las alcaldías -->
-              </p>
-            </div>
-            <div class="block">
-              <h5 class="block-title">Gobernaciones y CTP</h5>
-              <p class="meta">
-                <!-- Síntesis de la perspectiva de las gobernaciones y CTP -->
-              </p>
-            </div>
+          <div class="chart-header"><h5>Percepción territorial</h5></div>
+          <div class="chart-box">
+            <canvas id="terrChart" class="chart-canvas"></canvas>
           </div>
         </div>
-
+        
         <div class="block block-recs">
-          <h4 class="block-title">Perspectiva territorial</h4>
-          <ul class="rec-list">
-            <!-- Recomendaciones desde la perspectiva territorial -->
-          </ul>
+             <h4 class="block-title">Recomendaciones del CNP</h4>
+             <ul class="rec-list"><li>Aumentar el presupuesto para el funcionamiento de los CTPs.</li></ul>
         </div>
       </section>
 
@@ -759,12 +536,11 @@
   </main>
 
   <footer class="site-footer">
-    <small>
-      © Consejo Nacional de Planeación – 2025. Elaborado con base en la información reportada por sectores y
-      consejos territoriales de planeación.
-    </small>
+    <div style="text-align:center; margin-top:2rem; border-top:1px solid #e2e8f0; padding-top:1rem;">
+      &copy; 2025 Consejo Nacional de Planeación. Todos los derechos reservados.
+    </div>
   </footer>
-
+  
   <script src="app.js"></script>
 </body>
 </html>
