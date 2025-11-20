@@ -11,10 +11,10 @@
 
   <header class="site-header">
     <div class="header-left">
-      <img src="https://placehold.co/200x80?text=Logo+CNP" alt="Logo CNP" class="cnp-logo"/>
+      <img src="https://placehold.co/200x80/f4f6fb/0033a0?text=Logo+CNP" alt="Logo CNP" class="cnp-logo"/>
       <div class="title-wrap">
         <h1 class="headline">
-          REVISTA DE SEGUIMIENTO AL PLAN NACIONAL DE DESARROLLO 2022–2026
+          REVISTA DE SEGUIMIENTO AL PLAN NACIONAL DE DESARROLLO
         </h1>
         <h2 class="subheadline">
           Consejo Nacional de Planeación – Colombia Potencia Mundial de la Vida
@@ -22,28 +22,29 @@
       </div>
     </div>
     <div class="header-right">
-      <a class="btn btn-primary" href="#" onclick="alert('Aquí se descargaría el PDF final'); return false;">
-        Descargar concepto completo (PDF)
+      <a class="btn btn-primary" href="revista-completa.pdf" download>
+        Descargar PDF
       </a>
     </div>
   </header>
 
   <main class="layout">
+    
     <aside class="sidebar">
       <div class="sidebar-group">
-        <div class="sidebar-title">Sección general</div>
-        <button class="tab-btn active" data-target="general">General PND</button>
+        <div class="sidebar-title">General</div>
+        <button class="tab-btn active" data-target="general">Visión Global PND</button>
       </div>
       <div class="sidebar-group">
         <div class="sidebar-title">Sectores</div>
-        <button class="tab-btn" data-target="educativo">Educativo y Cultural</button>
-        <button class="tab-btn" data-target="economico">Económico</button>
-        <button class="tab-btn" data-target="mujeres">Mujeres</button>
-        <button class="tab-btn" data-target="social">Social</button>
-        <button class="tab-btn" data-target="ecologico">Ecológico</button>
-        <button class="tab-btn" data-target="afro">Afrocolombiano</button>
-        <button class="tab-btn" data-target="comunitario">Comunitario</button>
-        <button class="tab-btn" data-target="territoriales">Entes territoriales</button>
+        <button class="tab-btn" data-target="educativo">1. Educativo y Cultural</button>
+        <button class="tab-btn" data-target="economico">2. Económico</button>
+        <button class="tab-btn" data-target="mujeres">3. Mujeres</button>
+        <button class="tab-btn" data-target="social">4. Social</button>
+        <button class="tab-btn" data-target="ecologico">5. Ecológico</button>
+        <button class="tab-btn" data-target="afro">6. Afrocolombiano</button>
+        <button class="tab-btn" data-target="comunitario">7. Comunitario</button>
+        <button class="tab-btn" data-target="territoriales">8. Entes Territoriales</button>
       </div>
     </aside>
 
@@ -52,26 +53,21 @@
       <section id="general" class="panel active">
         <div class="general-layout">
           <div class="general-main">
+            
             <div class="block block-intro">
               <div class="section-kicker">Visión general</div>
-              <h3 class="section-title xl">
-                Introducción al seguimiento del PND
-              </h3>
+              <h3 class="section-title xl">Introducción al seguimiento</h3>
               <p class="lead">
-                El Consejo Nacional de Planeación presenta el seguimiento al PND 2022–2026 para el periodo
-                mayo de 2023 a junio de 2024, con actualizaciones de la información recolectada entre mayo
-                y agosto de 2025. El avance general reportado se estima en 59,18%, con resultados muy
-                dispares entre sectores y territorios.
+                El Consejo Nacional de Planeación presenta el seguimiento al PND 2022–2026. 
+                El avance general reportado muestra resultados dispares entre sectores y territorios.
               </p>
             </div>
 
             <div class="block block-prologo">
               <h4 class="block-title">Prólogo</h4>
               <p>
-                Esta revista sintetiza los hallazgos del seguimiento ciudadano al PND adelantado por el CNP
-                y los consejos territoriales de planeación. El propósito es ofrecer una lectura plural y
-                pedagógica sobre los avances, rezagos y alertas del Plan, enfatizando su impacto en la vida
-                cotidiana de la población y en la relación Nación–territorios.
+                Esta revista sintetiza los hallazgos del seguimiento ciudadano. El propósito es ofrecer 
+                una lectura plural y pedagógica sobre los avances, rezagos y alertas del Plan.
               </p>
             </div>
 
@@ -79,59 +75,48 @@
               <div class="block">
                 <div class="progress-head">
                   <div class="progress-label">Avance global PND</div>
-                  <div class="progress-value" id="globalPercent">59,18%</div>
+                  <div class="progress-value" id="globalPercent">0%</div>
                 </div>
                 <div class="progress-bar">
-                  <div class="progress-fill" id="globalProgress" style="width:59.18%"></div>
+                  <div class="progress-fill" id="globalProgress" style="width:0%"></div>
                 </div>
-
                 <div class="block-note">
-                  <small>
-                    La información de avance de los sectores se encuentra a fecha de corte de junio de 2025.
-                  </small>
+                  <small>Corte de información: Junio 2025.</small>
                 </div>
               </div>
 
               <div class="block">
-                <div class="chart-header">
-                  <h5>Distribución: avance vs por ejecutar</h5>
-                </div>
-                <div class="chart-box">
-                  <canvas id="generalChart" class="chart-canvas"></canvas>
-                </div>
+                <div class="chart-header"><h5>Ejecución vs Pendiente</h5></div>
+                <div class="chart-box"><canvas id="generalChart"></canvas></div>
               </div>
             </div>
 
             <div class="block">
-              <div class="chart-header">
-                <h5>Comparativo de sectores (0–100%) y línea PND general</h5>
-              </div>
-              <div class="chart-box large-chart-box">
-                <canvas id="sectorsChart" class="chart-canvas"></canvas>
-              </div>
+              <div class="chart-header"><h5>Comparativo por Sectores</h5></div>
+              <div class="chart-box large-chart-box"><canvas id="sectorsChart"></canvas></div>
             </div>
 
             <div class="block">
-              <h4 class="block-title">Comentarios generales del informe</h4>
+              <h4 class="block-title">Comentarios generales</h4>
               <ul class="comment-list">
-                <li>Se evidencia una necesidad urgente de articulación intersectorial.</li>
-                <li>Los indicadores de impacto requieren mayor trazabilidad en territorios apartados.</li>
+                <li>Se requiere mayor articulación interinstitucional.</li>
+                <li>Es necesario mejorar la calidad del dato en zonas rurales.</li>
               </ul>
             </div>
 
             <div class="block block-recs">
-              <h4 class="block-title">Recomendaciones generales del CNP</h4>
+              <h4 class="block-title">Recomendaciones del CNP</h4>
               <ul class="rec-list">
-                <li>Fortalecer los mecanismos de reporte de información cualitativa.</li>
-                <li>Incrementar la participación ciudadana en la fase de ejecución.</li>
+                <li>Fortalecer los espacios de diálogo vinculante.</li>
+                <li>Acelerar la ejecución presupuestal en los sectores rezagados.</li>
               </ul>
             </div>
           </div>
 
           <aside class="general-side">
             <div class="block photo-card">
-              <h4 class="block-title">Consejo Nacional de Planeación</h4>
-              <img src="https://placehold.co/600x400/0033a0/ffffff?text=Plenaria+CNP" class="hero-img" alt="Imagen general de la revista">
+              <h4 class="block-title">Plenaria CNP</h4>
+              <img src="https://placehold.co/600x400/e2e8f0/1e293b?text=Foto+Plenaria" class="hero-img" alt="Foto General">
             </div>
           </aside>
         </div>
@@ -141,20 +126,18 @@
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-edu">Sector 01</div>
-            <h3 class="section-title">Sector Educativo y Cultural</h3>
-            <div class="meta">
-              Línea de transformación principal: Seguridad Humana y Justicia Social.
-            </div>
+            <h3 class="section-title">Educativo y Cultural</h3>
+            <div class="meta">Línea: Seguridad Humana y Justicia Social.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejera del sector educativo y cultural</div>
+            <div class="consej-title">Consejera del sector</div>
             <div class="consejero-row">
               <div class="consejero-avatar-wrap">
-                <img class="consejero-foto" src="https://ui-avatars.com/api/?name=E+C&background=1f8947&color=fff" alt="Foto consejero/a">
+                <img class="consejero-foto" src="https://placehold.co/100x100/1f8947/fff?text=EC" alt="Avatar">
               </div>
               <div class="consej-data">
-                <div class="consej-name">Representante Sector</div>
-                <div class="consej-org">Educación / Cultura</div>
+                <div class="consej-name">Nombre Consejero/a</div>
+                <div class="consej-org">Organización Educativa</div>
               </div>
             </div>
           </div>
@@ -163,33 +146,21 @@
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
           <p class="meta">
-            El seguimiento muestra avances relevantes en cobertura, educación inicial y prácticas culturales,
-            pero rezagos en infraestructura, reducción del analfabetismo y deserción escolar.
+            Avances en cobertura superior y gratuidad, pero persisten retos en infraestructura física rural.
           </p>
         </div>
 
         <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores de educación y cultura</h5>
-          </div>
-          <div class="chart-box large-chart-box">
-            <canvas id="eduChart" class="chart-canvas"></canvas>
-          </div>
-          <p class="chart-help">Etiquetas abreviadas: pase el cursor para ver detalles.</p>
+          <div class="chart-box large-chart-box"><canvas id="eduChart"></canvas></div>
         </div>
-
         <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector educativo y cultural
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="edu"></span> indicadores)</span>
-          </h4>
+          <h4 class="block-title highlight">Indicadores Detallados</h4>
           <div class="indicator-grid" id="eduIndicators"></div>
         </div>
-
         <div class="block block-recs">
-          <h4 class="block-title">Recomendaciones del CNP</h4>
+          <h4 class="block-title">Recomendaciones</h4>
           <ul class="rec-list">
-             <li>Priorizar la infraestructura rural educativa.</li>
+            <li>Priorizar la construcción de sedes universitarias en territorio.</li>
           </ul>
         </div>
       </section>
@@ -198,60 +169,30 @@
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-eco">Sector 02</div>
-            <h3 class="section-title">Sector Económico</h3>
-            <div class="meta">
-              Líneas: Transformación productiva, internacionalización y acción climática; estabilidad macroeconómica.
-            </div>
+            <h3 class="section-title">Económico</h3>
+            <div class="meta">Línea: Transformación Productiva.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejeros/as del sector económico (4)</div>
+            <div class="consej-title">Consejeros/as (4)</div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+1&background=0033a0&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Gremio</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/0033a0/fff?text=C1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Gremio</div></div>
             </div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+2&background=0033a0&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 2</div><div class="consej-org">Producción</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/0033a0/fff?text=C2"></div>
+              <div class="consej-data"><div class="consej-name">Consejero 2</div><div class="consej-org">Producción</div></div>
             </div>
-            <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+3&background=0033a0&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 3</div><div class="consej-org">Comercio</div></div>
             </div>
-            <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Ec+4&background=0033a0&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 4</div><div class="consej-org">Servicios</div></div>
-            </div>
-          </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El crecimiento económico se ubica por debajo del potencial, con inversión insuficiente y retos en
-            infraestructura, reforma agraria y generación de empleo digno.
-          </p>
+          <p class="meta">Crecimiento moderado con desafíos en la reactivación industrial y empleo.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores económicos</h5>
-          </div>
-          <div class="chart-box large-chart-box">
-            <canvas id="ecoChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector económico
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="eco"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="ecoIndicators"></div>
-        </div>
-        
+        <div class="block"><div class="chart-box large-chart-box"><canvas id="ecoChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="ecoIndicators"></div></div>
         <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Acelerar la ejecución de proyectos de infraestructura vial.</li></ul>
+          <h4 class="block-title">Recomendaciones</h4>
+          <ul class="rec-list"><li>Fortalecer el crédito para la economía popular.</li></ul>
         </div>
       </section>
 
@@ -259,285 +200,152 @@
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-muj">Sector 03</div>
-            <h3 class="section-title">Sector Mujeres</h3>
-            <div class="meta">
-              Líneas: Seguridad Humana y Justicia Social; Derecho humano a la alimentación.
-            </div>
+            <h3 class="section-title">Mujeres</h3>
+            <div class="meta">Línea: Seguridad Humana.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejeras del sector mujeres (2)</div>
+            <div class="consej-title">Consejeras (2)</div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=M+1&background=d81b60&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejera 1</div><div class="consej-org">Org. Mujeres</div></div>
-            </div>
-            <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=M+2&background=d81b60&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejera 2</div><div class="consej-org">Territorial</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/d81b60/fff?text=M1"></div>
+              <div class="consej-data"><div class="consej-name">Consejera 1</div><div class="consej-org">Red Mujeres</div></div>
             </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El promedio de desempeño es alto en varios indicadores de salud y atención a violencias, pero persisten
-            brechas críticas en acceso a tierra, crédito y autonomía económica.
-          </p>
+          <p class="meta">Altos logros en paridad política, brechas en acceso a tierras.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header">
-            <h5>Indicadores sector mujeres</h5>
-          </div>
-          <div class="chart-box">
-            <canvas id="mujChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector mujeres
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="muj"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="mujIndicators"></div>
-        </div>
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Fortalecer las rutas de atención en zonas rurales dispersas.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="mujChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="mujIndicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Ampliar rutas de atención a violencias.</li></ul></div>
       </section>
 
       <section id="social" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-soc">Sector 04</div>
-            <h3 class="section-title">Sector Social</h3>
-            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
+            <h3 class="section-title">Social</h3>
+            <div class="meta">Línea: Justicia Social.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejeros/as del sector social (2)</div>
+            <div class="consej-title">Consejeros (2)</div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=S+1&background=ce1126&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Social</div></div>
-            </div>
-            <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=S+2&background=ce1126&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero 2</div><div class="consej-org">Vivienda</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/ce1126/fff?text=S1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero 1</div><div class="consej-org">Salud</div></div>
             </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El sector presenta avances en algunos componentes de salud y protección social, pero persisten un
-            déficit habitacional creciente y dificultades para reducir la pobreza.
-          </p>
+          <p class="meta">Mejoras en salud preventiva, déficit alto en vivienda VIS.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header"><h5>Indicadores sociales</h5></div>
-          <div class="chart-box">
-            <canvas id="socChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector social
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="soc"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="socIndicators"></div>
-        </div>
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Mejorar la focalización de subsidios de vivienda.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="socChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="socIndicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Revisar modelo de subsidios de vivienda.</li></ul></div>
       </section>
 
       <section id="ecologico" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-eco2">Sector 05</div>
-            <h3 class="section-title">Sector Ecológico</h3>
-            <div class="meta">
-              Líneas: Ordenamiento del territorio alrededor del agua y justicia ambiental.
-            </div>
+            <h3 class="section-title">Ecológico</h3>
+            <div class="meta">Línea: Ordenamiento territorial y Agua.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector ecológico (1)</div>
+            <div class="consej-title">Consejero (1)</div>
             <div class="consejero-row">
-              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Eco+2&background=1b5e20&color=fff"></div>
-              <div class="consej-data"><div class="consej-name">Consejero Ambiental</div><div class="consej-org">Ambiental</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/1b5e20/fff?text=E1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero Amb</div><div class="consej-org">Red Ambiental</div></div>
             </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El sector muestra avances importantes en energías renovables y restauración, con grandes alertas
-            en deforestación y negocios verdes en zonas de cultivos ilícitos.
-          </p>
+          <p class="meta">Transición energética avanza, alerta por deforestación en la Amazonía.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header"><h5>Indicadores ecológicos</h5></div>
-          <div class="chart-box">
-            <canvas id="eco2Chart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector ecológico
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="eco2"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="eco2Indicators"></div>
-        </div>
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Reforzar el control ambiental en la Amazonía.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="eco2Chart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="eco2Indicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Fortalecer control ambiental.</li></ul></div>
       </section>
 
       <section id="afro" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-afro">Sector 06</div>
-            <h3 class="section-title">Sector Afrocolombiano</h3>
-            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
+            <h3 class="section-title">Afrocolombiano</h3>
+            <div class="meta">Línea: Justicia Social.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejero/a del sector afro (1)</div>
+            <div class="consej-title">Consejero (1)</div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=A+C&background=6d4c41&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero Afro</div><div class="consej-org">PCN / Territorio</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/6d4c41/fff?text=A1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero Afro</div><div class="consej-org">PCN</div></div>
             </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El avance promedio sectorial es bajo, con indicadores que reflejan limitada prioridad de la agenda
-            afro en ministerios clave y debilidades en el enfoque étnico.
-          </p>
+          <p class="meta">Bajo cumplimiento de indicadores específicos del capítulo étnico.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header"><h5>Avances por componentes</h5></div>
-          <div class="chart-box">
-            <canvas id="afroChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector afrocolombiano
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="afro"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="afroIndicators"></div>
-        </div>
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Garantizar recursos específicos para el capítulo étnico.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="afroChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="afroIndicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Garantizar recursos específicos.</li></ul></div>
       </section>
 
       <section id="comunitario" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-com">Sector 07</div>
-            <h3 class="section-title">Sector Comunitario</h3>
-            <div class="meta">Línea de transformación: Seguridad Humana y Justicia Social.</div>
+            <h3 class="section-title">Comunitario</h3>
+            <div class="meta">Línea: Seguridad Humana.</div>
           </div>
           <div class="consejeros-box">
-             <div class="consej-title">Consejero/a del sector comunitario (1)</div>
-             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=Com+1&background=f57c00&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero Comunal</div><div class="consej-org">JAC</div></div>
-             </div>
+            <div class="consej-title">Consejero (1)</div>
+            <div class="consejero-row">
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/f57c00/fff?text=C1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero Comunal</div><div class="consej-org">JAC</div></div>
+            </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-            El cumplimiento conjunto de los indicadores es bajo y el contexto evidencia aumento de amenazas
-            y violencias contra liderazgos sociales y comunitarios.
-          </p>
+          <p class="meta">Alerta por seguridad de líderes y lideresas comunales.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header"><h5>Indicadores comunitarios</h5></div>
-          <div class="chart-box">
-            <canvas id="comChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-
-        <div class="block">
-          <h4 class="block-title highlight">
-            Indicadores del sector comunitario
-            <span class="ind-count-pill">(<span class="ind-count" data-ind-count="com"></span> indicadores)</span>
-          </h4>
-          <div class="indicator-grid" id="comIndicators"></div>
-        </div>
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Fortalecer la protección de líderes sociales.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="comChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="comIndicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Protección efectiva a líderes.</li></ul></div>
       </section>
 
       <section id="territoriales" class="panel">
         <div class="panel-head">
           <div>
             <div class="section-kicker sector-terr">Sector 08</div>
-            <h3 class="section-title">Entes territoriales y CTP</h3>
-            <div class="meta">
-              Líneas de transformación: Seguridad Humana y Justicia Social; Ordenamiento del territorio.
-            </div>
+            <h3 class="section-title">Entes Territoriales</h3>
+            <div class="meta">Línea: Convergencia Regional.</div>
           </div>
           <div class="consejeros-box">
-            <div class="consej-title">Consejeros/as territoriales (4)</div>
+            <div class="consej-title">Consejeros (2)</div>
             <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=ET+1&background=374151&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero T1</div><div class="consej-org">Región 1</div></div>
-            </div>
-            <div class="consejero-row">
-                <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://ui-avatars.com/api/?name=ET+2&background=374151&color=fff"></div>
-                <div class="consej-data"><div class="consej-name">Consejero T2</div><div class="consej-org">Región 2</div></div>
+              <div class="consejero-avatar-wrap"><img class="consejero-foto" src="https://placehold.co/100x100/374151/fff?text=T1"></div>
+              <div class="consej-data"><div class="consej-name">Consejero T1</div><div class="consej-org">Región</div></div>
             </div>
           </div>
         </div>
-
         <div class="block block-sintesis">
           <h4 class="block-title">Síntesis sectorial</h4>
-          <p class="meta">
-             La articulación entre la Nación y los territorios sigue siendo un desafío, con brechas importantes
-             en la capacidad técnica de los Consejos Territoriales de Planeación (CTP).
-          </p>
+          <p class="meta">Desarticulación entre planes nacionales y locales.</p>
         </div>
-
-        <div class="block">
-          <div class="chart-header"><h5>Percepción territorial</h5></div>
-          <div class="chart-box">
-            <canvas id="terrChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-        
-        <div class="block block-recs">
-             <h4 class="block-title">Recomendaciones del CNP</h4>
-             <ul class="rec-list"><li>Aumentar el presupuesto para el funcionamiento de los CTPs.</li></ul>
-        </div>
+        <div class="block"><div class="chart-box"><canvas id="terrChart"></canvas></div></div>
+        <div class="block"><div class="indicator-grid" id="terrIndicators"></div></div>
+        <div class="block block-recs"><h4 class="block-title">Recomendaciones</h4><ul class="rec-list"><li>Fortalecer CTPs municipales.</li></ul></div>
       </section>
 
     </section>
   </main>
 
   <footer class="site-footer">
-    <div style="text-align:center; margin-top:2rem; border-top:1px solid #e2e8f0; padding-top:1rem;">
-      &copy; 2025 Consejo Nacional de Planeación. Todos los derechos reservados.
+    <div style="text-align:center; margin-top:2rem; border-top:1px solid #e2e8f0; padding-top:1rem; color:#64748b; font-size:0.9rem;">
+      &copy; 2025 Consejo Nacional de Planeación.
     </div>
   </footer>
   
