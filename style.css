@@ -45,7 +45,7 @@ body{
 .btn-ghost{background:transparent;color:var(--blue)}
 .btn-edit{background:var(--yellow);color:#000}
 
-/* Admin bar */
+/* Admin bar (ya no se usa, pero no estorba) */
 .admin-bar{
   display:flex;
   align-items:center;
@@ -333,25 +333,24 @@ body{
   margin-bottom:.4rem;
 }
 
-/* Contenedor controlado para las gráficas */
-.chart-wrapper{
+.chart-box{
   width:100%;
   max-width:100%;
-  height:260px;
-  position:relative;
+  padding:.25rem 0 .5rem;
 }
-.chart-wrapper.chart-tall{
-  height:320px;
-}
-.chart-wrapper.chart-short{
-  height:220px;
-}
-.chart-wrapper.chart-wide{
-  height:260px;
-}
-.chart-wrapper canvas{
+
+.chart-box canvas{
   width:100% !important;
-  height:100% !important;
+  height:auto !important;
+  display:block;
+}
+
+/* Texto de ayuda bajo gráfico */
+.chart-help{
+  margin:0;
+  margin-top:.15rem;
+  font-size:.85rem;
+  color:var(--muted);
 }
 
 /* Panel head (sector) */
@@ -449,6 +448,47 @@ body{
   font-size:.9rem;
   color:#111827;
 }
+.ind-tabs{
+  display:flex;
+  gap:.4rem;
+}
+.ind-btn{
+  flex:1;
+  background:var(--soft);
+  border-radius:11px;
+  border:1px solid var(--ring);
+  padding:.4rem .6rem;
+  font-size:.9rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .15s ease, transform .15s ease;
+}
+.ind-btn:hover{
+  transform:translateY(-1px);
+}
+.ind-btn.active{
+  background:var(--yellow);
+  border-color:var(--yellow);
+  color:#111827;
+}
+.ind-body{
+  border-radius:12px;
+  border:1px solid var(--ring);
+  padding:.7rem .75rem;
+  font-size:.9rem;
+  line-height:1.3rem;
+}
+.ind-body.avance{
+  background:#edf9f2;
+  border-color:rgba(31,137,71,.25);
+  color:#075e33;
+}
+.ind-body.alerta{
+  background:#fef2f2;
+  border-color:rgba(206,17,38,.25);
+  color:#991b1b;
+  display:none;
+}
 
 /* Comentarios y recomendaciones */
 .comment-list{
@@ -474,6 +514,24 @@ body{
   color:var(--muted);
   font-size:.9rem;
 }
+
+/* Edit mode visual (ya no se usa) */
+.editable-on{
+  outline:2px dashed var(--yellow);
+  outline-offset:2px;
+  background:#fffef3;
+}
+
+/* Panel edición numérica (ya no se usa) */
+.edit-panel{
+  display:none;
+  gap:.6rem;
+  flex-wrap:wrap;
+  margin:.65rem 0 .4rem;
+  font-size:.9rem;
+}
+.edit-panel label{display:flex;gap:.3rem;align-items:center}
+.edit-panel input[type="number"]{width:95px}
 
 /* Territoriales: dos cuadros de texto */
 .terr-perspectivas .block{
